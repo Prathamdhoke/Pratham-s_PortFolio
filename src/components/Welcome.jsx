@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 const FONT_WEIGHTS = {
-  subtitle: { min: 100, max: 900, default: 400 },
+  subtitle: { min: 100, max: 900, default: 100 },
   title: { min: 400, max: 900, default: 400 },
 };
 
@@ -73,8 +73,8 @@ const Welcome = () => {
     const subtitleCleanup = setupTextHover(subtitleRef.current, "subtitle");
 
     return () => {
-      subtitleCleanup();
-      titleCleanup();
+      subtitleCleanup?.();
+      titleCleanup?.();
     };
   }, []);
 
@@ -84,7 +84,7 @@ const Welcome = () => {
         {renderText(
           "Hey, I'm Pratham! Welcome to my",
           "text-3xl font-georama",
-          100,
+          FONT_WEIGHTS.subtitle.default,
         )}
       </p>
 

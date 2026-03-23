@@ -1,4 +1,4 @@
 import NavBar from "./NavBar";
-import Welcome from "./welcome";
+import Welcome from "./Welcome";
 
 export { NavBar, Welcome };
